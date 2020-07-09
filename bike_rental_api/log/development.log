@@ -462,3 +462,111 @@ Processing by LocationsController#index as HTML
 Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 6248)
 
 
+  [1m[36mLedger Load (0.5ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mLedger Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "ledgers" LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mLedger Load (0.2ms)[0m  [1m[34mSELECT "ledgers".* FROM "ledgers"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLedger Create (1.0ms)[0m  [1m[32mINSERT INTO "ledgers" ("location_id", "bike_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location_id", 4], ["bike_id", 7], ["created_at", "2020-07-09 06:19:06.403649"], ["updated_at", "2020-07-09 06:19:06.403649"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.4ms)[0m  [1m[32mINSERT INTO "ledgers" ("location_id", "bike_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location_id", 2], ["bike_id", 6], ["created_at", "2020-07-09 06:28:00.777033"], ["updated_at", "2020-07-09 06:28:00.777033"]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.5ms)[0m  [1m[32mINSERT INTO "ledgers" ("location_id", "bike_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location_id", 2], ["bike_id", 5], ["created_at", "2020-07-09 06:28:10.143686"], ["updated_at", "2020-07-09 06:28:10.143686"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.5ms)[0m  [1m[32mINSERT INTO "ledgers" ("location_id", "bike_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location_id", 1], ["bike_id", 4], ["created_at", "2020-07-09 06:28:17.178079"], ["updated_at", "2020-07-09 06:28:17.178079"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.5ms)[0m  [1m[32mINSERT INTO "ledgers" ("location_id", "bike_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location_id", 1], ["bike_id", 3], ["created_at", "2020-07-09 06:28:20.928388"], ["updated_at", "2020-07-09 06:28:20.928388"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.6ms)[0m  [1m[32mINSERT INTO "ledgers" ("location_id", "bike_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location_id", 1], ["bike_id", 2], ["created_at", "2020-07-09 06:28:27.116748"], ["updated_at", "2020-07-09 06:28:27.116748"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mBike Load (0.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mLedger Create (0.5ms)[0m  [1m[32mINSERT INTO "ledgers" ("location_id", "bike_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["location_id", 1], ["bike_id", 1], ["created_at", "2020-07-09 06:28:30.320983"], ["updated_at", "2020-07-09 06:28:30.320983"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/bikes" for ::1 at 2020-07-08 23:47:26 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BikesController#index as HTML
+  [1m[36mBike Load (0.6ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.9ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 1]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 2]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 3]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 4]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 5]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 6]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 7]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 8]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+Completed 200 OK in 55ms (Views: 0.2ms | ActiveRecord: 15.2ms | Allocations: 31944)
+
+
+Started GET "/bikes" for ::1 at 2020-07-08 23:47:29 -0700
+Processing by BikesController#index as HTML
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 1]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 2]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 3]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 4]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 5]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 6]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 7]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 8]]
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 2.4ms | Allocations: 12091)
+
+
+Started GET "/locations" for ::1 at 2020-07-08 23:47:39 -0700
+Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 1]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 2]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 3]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 4]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 2.3ms | Allocations: 7688)
+
+
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mLedger Exists? (0.8ms)[0m  [1m[34mSELECT 1 AS one FROM "ledgers" WHERE "ledgers"."bike_id" = $1 AND "ledgers"."location_id" = $2 LIMIT $3[0m  [["bike_id", 7], ["location_id", 4], ["LIMIT", 1]]
+  [1m[36mLedger Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "ledgers" WHERE "ledgers"."location_id" = $1 AND "ledgers"."bike_id" = $2 LIMIT $3[0m  [["location_id", 4], ["bike_id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
