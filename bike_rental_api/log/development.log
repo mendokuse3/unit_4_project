@@ -155,3 +155,236 @@ Migrating to ChangeClassToBikeClass (20200709012149)
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[36mBike Create (0.3ms)[0m  [1m[32mINSERT INTO "bikes" ("name", "bike_class", "price", "email", "created_at", "updated_at", "img", "year") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["name", "Harley Davidson Sportster"], ["bike_class", "Cafe Racer"], ["price", "50.0"], ["email", "mike@email.com"], ["created_at", "2020-07-09 01:22:34.113388"], ["updated_at", "2020-07-09 01:22:34.113388"], ["img", "https://images.unsplash.com/photo-1565073645024-3ef2dedfccc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"], ["year", "2017"]]
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for ::1 at 2020-07-08 18:28:06 -0700
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Library/Ruby/Gems/2.6.0/gems/railties-6.0.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 14.0ms | Allocations: 469)
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 0.0ms | Allocations: 2530)
+
+
+Started GET "/favicon.ico" for ::1 at 2020-07-08 18:28:06 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+actionpack (6.0.3.2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.2) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.2) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+railties (6.0.3.2) lib/rails/engine.rb:527:in `call'
+puma (4.3.5) lib/puma/configuration.rb:228:in `call'
+puma (4.3.5) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.5) lib/puma/server.rb:472:in `process_client'
+puma (4.3.5) lib/puma/server.rb:328:in `block in run'
+puma (4.3.5) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/bikes" for ::1 at 2020-07-08 18:28:09 -0700
+Processing by BikesController#index as HTML
+  [1m[36mBike Load (0.7ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 11.0ms | ActiveRecord: 7.5ms | Allocations: 9272)
+
+
+Started GET "/locations" for ::1 at 2020-07-08 18:28:15 -0700
+Processing by LocationsController#index as HTML
+  [1m[36mLocation Load (0.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+Completed 200 OK in 19ms (Views: 10.1ms | ActiveRecord: 8.1ms | Allocations: 8393)
+
+
+Started GET "/bikes" for ::1 at 2020-07-08 18:51:43 -0700
+Processing by BikesController#index as HTML
+  [1m[36mBike Load (1.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 1.3ms | Allocations: 2459)
+
+
+Started GET "/bikes" for ::1 at 2020-07-08 20:28:21 -0700
+Processing by BikesController#index as HTML
+  [1m[36mBike Load (0.7ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.7ms | Allocations: 2460)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1443191365727632605)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to RenameNameandAddMake (20200709033057)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "bikes" RENAME COLUMN "name" TO "model"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "bikes" ADD "make" character varying[0m
+  [1m[36mprimary::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20200709033057"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(1443191365727632605)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.5ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Los Angeles"], ["state", "California"], ["country", "United States"], ["lat", "34.0475331"], ["long", "-118.250197"], ["created_at", "2020-07-09 03:33:52.062333"], ["updated_at", "2020-07-09 03:33:52.062333"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "San Francisco"], ["state", "California"], ["country", "United States"], ["lat", "37.7411927"], ["long", "-122.4564423"], ["created_at", "2020-07-09 03:33:52.067892"], ["updated_at", "2020-07-09 03:33:52.067892"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Ajina"], ["state", "Hiroshima"], ["country", "Japan"], ["lat", "34.3070042"], ["long", "132.3903645"], ["created_at", "2020-07-09 03:33:52.071192"], ["updated_at", "2020-07-09 03:33:52.071192"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Yeongdeungpo-gu"], ["state", "Seoul"], ["country", "South Korea"], ["lat", "37.3281825"], ["long", "126.9125374"], ["created_at", "2020-07-09 03:33:52.074141"], ["updated_at", "2020-07-09 03:33:52.074141"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.4ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "Street Triple"], ["bike_class", "Naked"], ["price", "75.0"], ["email", "john@email.com"], ["created_at", "2020-07-09 03:33:52.088167"], ["updated_at", "2020-07-09 03:33:52.088167"], ["img", "https://images.unsplash.com/photo-1591259750353-31ae4a19d54d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"], ["year", "2019"], ["make", "Triumph"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "SuperSport S"], ["bike_class", "SuperSport"], ["price", "105.0"], ["email", "bob@email.com"], ["created_at", "2020-07-09 03:33:52.091437"], ["updated_at", "2020-07-09 03:33:52.091437"], ["img", "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"], ["year", "2015"], ["make", "Ducati"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "R6"], ["bike_class", "Sport"], ["price", "70.0"], ["email", "joe@email.com"], ["created_at", "2020-07-09 03:33:52.094447"], ["updated_at", "2020-07-09 03:33:52.094447"], ["img", "https://images.unsplash.com/photo-1552155634-312b6355173b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1309&q=80"], ["year", "2009"], ["make", "Yamaha"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "S1000RR"], ["bike_class", "SuperSport"], ["price", "90.0"], ["email", "alex@email.com"], ["created_at", "2020-07-09 03:33:52.097260"], ["updated_at", "2020-07-09 03:33:52.097260"], ["img", "https://images.unsplash.com/photo-1572746965401-cb4df8f9fa79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1040&q=80"], ["year", "2009"], ["make", "BMW"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.3ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "MT09"], ["bike_class", "Naked"], ["price", "55.0"], ["email", "gabe@email.com"], ["created_at", "2020-07-09 03:33:52.099860"], ["updated_at", "2020-07-09 03:33:52.099860"], ["img", "https://images.unsplash.com/photo-1561023546-4e728fa9eaf4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1254&q=80"], ["year", "2013"], ["make", "Yamaha"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "RSV1000R"], ["bike_class", "Sport"], ["price", "85.0"], ["email", "ducatilex@email.com"], ["created_at", "2020-07-09 03:33:52.102417"], ["updated_at", "2020-07-09 03:33:52.102417"], ["img", "https://images.unsplash.com/photo-1547729966-d80039abb615?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"], ["year", "2004"], ["make", "Aprilia"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "ZX10R"], ["bike_class", "SuperSport"], ["price", "80.0"], ["email", "kyle@email.com"], ["created_at", "2020-07-09 03:33:52.104926"], ["updated_at", "2020-07-09 03:33:52.104926"], ["img", "https://images.unsplash.com/photo-1552085824-2af9e5fc3ba8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1791&q=80"], ["year", "2014"], ["make", "Kawasaki"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "Sportster"], ["bike_class", "Cafe Racer"], ["price", "50.0"], ["email", "mike@email.com"], ["created_at", "2020-07-09 03:33:52.107429"], ["updated_at", "2020-07-09 03:33:52.107429"], ["img", "https://images.unsplash.com/photo-1565073645024-3ef2dedfccc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"], ["year", "2017"], ["make", "Harley Davidson"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/bikes" for ::1 at 2020-07-08 20:33:55 -0700
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BikesController#index as HTML
+  [1m[36mBike Load (0.7ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 13.6ms | ActiveRecord: 6.1ms | Allocations: 11600)
+
+
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (52.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bike_rental_api_development"[0m
+  [1m[35m (29.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bike_rental_api_test"[0m
+  [1m[35m (65.6ms)[0m  [1m[35mCREATE DATABASE "bike_rental_api_development" ENCODING = 'unicode'[0m
+  [1m[35m (54.1ms)[0m  [1m[35mCREATE DATABASE "bike_rental_api_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "bikes" CASCADE[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "bikes" ("id" bigserial primary key, "model" character varying, "bike_class" character varying, "price" decimal(8,2), "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "img" character varying, "year" character varying, "make" character varying)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations" CASCADE[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCREATE TABLE "locations" ("id" bigserial primary key, "city" character varying, "state" character varying, "country" character varying, "lat" decimal, "long" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200709033057)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200708235701),
+(20200709001256),
+(20200709001859),
+(20200709004948),
+(20200709005200),
+(20200709011840),
+(20200709012149);
+
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-09 03:36:16.392303"], ["updated_at", "2020-07-09 03:36:16.392303"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ab0fca358fe07432270204282635a6a1c133ff95"], ["created_at", "2020-07-09 03:36:16.398251"], ["updated_at", "2020-07-09 03:36:16.398251"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "bikes" CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE "bikes" ("id" bigserial primary key, "model" character varying, "bike_class" character varying, "price" decimal(8,2), "email" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "img" character varying, "year" character varying, "make" character varying)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "locations" CASCADE[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCREATE TABLE "locations" ("id" bigserial primary key, "city" character varying, "state" character varying, "country" character varying, "lat" decimal, "long" decimal, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200709033057)[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200708235701),
+(20200709001256),
+(20200709001859),
+(20200709004948),
+(20200709005200),
+(20200709011840),
+(20200709012149);
+
+[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-07-09 03:36:16.448986"], ["updated_at", "2020-07-09 03:36:16.448986"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2020-07-09 03:36:16.453531"], ["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "ab0fca358fe07432270204282635a6a1c133ff95"], ["created_at", "2020-07-09 03:36:16.458086"], ["updated_at", "2020-07-09 03:36:16.458086"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.7ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Los Angeles"], ["state", "California"], ["country", "United States"], ["lat", "34.0475331"], ["long", "-118.250197"], ["created_at", "2020-07-09 03:36:16.512276"], ["updated_at", "2020-07-09 03:36:16.512276"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.3ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "San Francisco"], ["state", "California"], ["country", "United States"], ["lat", "37.7411927"], ["long", "-122.4564423"], ["created_at", "2020-07-09 03:36:16.515698"], ["updated_at", "2020-07-09 03:36:16.515698"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Ajina"], ["state", "Hiroshima"], ["country", "Japan"], ["lat", "34.3070042"], ["long", "132.3903645"], ["created_at", "2020-07-09 03:36:16.518461"], ["updated_at", "2020-07-09 03:36:16.518461"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mLocation Create (0.2ms)[0m  [1m[32mINSERT INTO "locations" ("city", "state", "country", "lat", "long", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["city", "Yeongdeungpo-gu"], ["state", "Seoul"], ["country", "South Korea"], ["lat", "37.3281825"], ["long", "126.9125374"], ["created_at", "2020-07-09 03:36:16.520972"], ["updated_at", "2020-07-09 03:36:16.520972"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.5ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "Street Triple"], ["bike_class", "Naked"], ["price", "75.0"], ["email", "john@email.com"], ["created_at", "2020-07-09 03:36:16.533333"], ["updated_at", "2020-07-09 03:36:16.533333"], ["img", "https://images.unsplash.com/photo-1591259750353-31ae4a19d54d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"], ["year", "2019"], ["make", "Triumph"]]
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.3ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "SuperSport S"], ["bike_class", "SuperSport"], ["price", "105.0"], ["email", "bob@email.com"], ["created_at", "2020-07-09 03:36:16.536201"], ["updated_at", "2020-07-09 03:36:16.536201"], ["img", "https://images.unsplash.com/photo-1568772585407-9361f9bf3a87?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"], ["year", "2015"], ["make", "Ducati"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "R6"], ["bike_class", "Sport"], ["price", "70.0"], ["email", "joe@email.com"], ["created_at", "2020-07-09 03:36:16.538590"], ["updated_at", "2020-07-09 03:36:16.538590"], ["img", "https://images.unsplash.com/photo-1552155634-312b6355173b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1309&q=80"], ["year", "2009"], ["make", "Yamaha"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "S1000RR"], ["bike_class", "SuperSport"], ["price", "90.0"], ["email", "alex@email.com"], ["created_at", "2020-07-09 03:36:16.540852"], ["updated_at", "2020-07-09 03:36:16.540852"], ["img", "https://images.unsplash.com/photo-1572746965401-cb4df8f9fa79?ixlib=rb-1.2.1&auto=format&fit=crop&w=1040&q=80"], ["year", "2009"], ["make", "BMW"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.4ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "MT09"], ["bike_class", "Naked"], ["price", "55.0"], ["email", "gabe@email.com"], ["created_at", "2020-07-09 03:36:16.543665"], ["updated_at", "2020-07-09 03:36:16.543665"], ["img", "https://images.unsplash.com/photo-1561023546-4e728fa9eaf4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1254&q=80"], ["year", "2013"], ["make", "Yamaha"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.3ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "RSV1000R"], ["bike_class", "Sport"], ["price", "85.0"], ["email", "ducatilex@email.com"], ["created_at", "2020-07-09 03:36:16.546857"], ["updated_at", "2020-07-09 03:36:16.546857"], ["img", "https://images.unsplash.com/photo-1547729966-d80039abb615?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80"], ["year", "2004"], ["make", "Aprilia"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "ZX10R"], ["bike_class", "SuperSport"], ["price", "80.0"], ["email", "kyle@email.com"], ["created_at", "2020-07-09 03:36:16.549856"], ["updated_at", "2020-07-09 03:36:16.549856"], ["img", "https://images.unsplash.com/photo-1552085824-2af9e5fc3ba8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1791&q=80"], ["year", "2014"], ["make", "Kawasaki"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBike Create (0.2ms)[0m  [1m[32mINSERT INTO "bikes" ("model", "bike_class", "price", "email", "created_at", "updated_at", "img", "year", "make") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["model", "Sportster"], ["bike_class", "Cafe Racer"], ["price", "50.0"], ["email", "mike@email.com"], ["created_at", "2020-07-09 03:36:16.552525"], ["updated_at", "2020-07-09 03:36:16.552525"], ["img", "https://images.unsplash.com/photo-1565073645024-3ef2dedfccc5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=668&q=80"], ["year", "2017"], ["make", "Harley Davidson"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/bikes" for ::1 at 2020-07-08 20:36:22 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BikesController#index as HTML
+  [1m[36mBike Load (0.7ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes"[0m
+  ↳ app/controllers/bikes_controller.rb:8:in `index'
+Completed 200 OK in 20ms (Views: 11.8ms | ActiveRecord: 6.9ms | Allocations: 10001)
+
+
