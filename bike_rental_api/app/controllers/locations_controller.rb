@@ -5,12 +5,12 @@ class LocationsController < ApplicationController
   def index
     @locations = Location.all
 
-    render json: @locations
+    render json: @locations.to_json(include: :bikes)
   end
 
   # GET /locations/1
   def show
-    render json: @location
+    render json: @location.to_json(include: :bikes)
   end
 
   # POST /locations

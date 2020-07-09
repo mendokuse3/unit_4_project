@@ -5,12 +5,12 @@ class BikesController < ApplicationController
   def index
     @bikes = Bike.all
 
-    render json: @bikes
+    render json: @bikes.to_json(include: :locations)
   end
 
   # GET /bikes/1
   def show
-    render json: @bike
+    render json: @bike.to_json(include: :locations)
   end
 
   # POST /bikes
