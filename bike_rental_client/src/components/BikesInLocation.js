@@ -44,7 +44,7 @@ class BikesInLocation extends Component {
             </div>
             }
             {this.state.addBike &&
-            <Form />
+            <Form currentLocation={this.props.currentLocation} bikesInLocation={this.state.bikesInLocation}/>
             }
 
             <button onClick={this.props.goHome}>Go Back To Locations</button>
