@@ -26,7 +26,7 @@ class BikesInLocation extends Component {
                     <div key={bike.id}>
                         <h3>{bike.year} {bike.make} {bike.model}</h3>
                         <img src={bike.img} alt={bike.model} style={{width: '200px'}}/>
-                        <button>See More</button>
+                        <button onClick={() => this.props.showBike(bike.id)}>See More</button>
                     </div>
                 )
             })

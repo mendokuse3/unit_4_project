@@ -6,33 +6,48 @@ import BikesInLocation from './components/BikesInLocation.js'
 class App extends Component{
   state = {
     currentLocation: '',
-    showLocation: false
+    currentBike: '',
+    showLocation: false,
+    showBike: false
+
   }
 
   checkOutBikes = (id) => {
     this.setState({
-      currentLocation: id
-    })
-    this.swapShowLocation()
-  }
-
-  swapShowLocation = () => {
-    this.setState({
+      currentLocation: id,
       showLocation: !this.state.showLocation
     })
   }
+
+  goBack = () => {
+    this.setState({
+      showLocation: false,
+      showBike: false
+    })
+  }
+  showBike = (id) => {
+    this.setState({
+      currentBike: id,
+      showBike: !this.state.showBike,
+      showLocation: false
+    })
+  }
+
+
 
 
   render(){
     return (
       <div className='App'>
-        <Bike />
         <header>This is the header</header>
-        {!this.state.showLocation &&
+        {!this.state.showLocation && !this.state.showBike &&
         <Locations checkOutBikes={this.checkOutBikes} />
         }
-        {this.state.showLocation &&
-        <BikesInLocation currentLocation={this.state.currentLocation} goBack={this.swapShowLocation}/>
+        {this.state.showLocation && !this.state.showBike &&
+        <BikesInLocation showBike={this.showBike} currentLocation={this.state.currentLocation} goBack={this.goBack}/>
+        }
+        {this.state.showBike && !this.state.showLocation &&
+        <Bike goBack={this.goBack} currentBike={this.state.currentBike}/>
         }
       </div>
     )
