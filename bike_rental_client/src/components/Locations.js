@@ -25,7 +25,7 @@ class Locations extends Component {
                 return(
                     <div key={location.id}>
                         <h3>{location.city}, {location.state}, {location.country}</h3>
-                        <button>Check Out Bikes</button>
+                        <button onClick={() => this.props.checkOutBikes(location.id)}>Check Out Bikes</button>
                     </div>
                 )
             })

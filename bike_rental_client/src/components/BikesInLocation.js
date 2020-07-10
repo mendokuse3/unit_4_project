@@ -10,7 +10,7 @@ class BikesInLocation extends Component {
     }
 
     getBikesInLocation = () => {
-        fetch('http://localhost:3000/locations/1')
+        fetch(`http://localhost:3000/locations/${this.props.currentLocation}`)
         .then(response => response.json())
         .then(data => this.setState({bikesInLocation: data}))
         .catch(err => console.log(err))
@@ -31,6 +31,7 @@ class BikesInLocation extends Component {
                 )
             })
             }
+            <button onClick={this.props.goBack}>Go Back</button>
             </>
         )
     }
