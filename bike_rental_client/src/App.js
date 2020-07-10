@@ -19,7 +19,7 @@ class App extends Component{
     })
   }
 
-  goBack = () => {
+  goHome = () => {
     this.setState({
       showLocation: false,
       showBike: false
@@ -30,6 +30,13 @@ class App extends Component{
       currentBike: id,
       showBike: !this.state.showBike,
       showLocation: false
+    })
+  }
+
+  swapBikeAndLocation = () => {
+    this.setState({
+      showBike: !this.state.showBike,
+      showLocation: !this.state.showLocation
     })
   }
 
@@ -44,10 +51,14 @@ class App extends Component{
         <Locations checkOutBikes={this.checkOutBikes} />
         }
         {this.state.showLocation && !this.state.showBike &&
-        <BikesInLocation showBike={this.showBike} currentLocation={this.state.currentLocation} goBack={this.goBack}/>
+        <BikesInLocation 
+          showBike={this.showBike} 
+          currentLocation={this.state.currentLocation} 
+          goHome={this.goHome}
+        />
         }
         {this.state.showBike && !this.state.showLocation &&
-        <Bike goBack={this.goBack} currentBike={this.state.currentBike}/>
+        <Bike goHome={this.goHome} currentBike={this.state.currentBike} goBack={this.swapBikeAndLocation}/>
         }
       </div>
     )
