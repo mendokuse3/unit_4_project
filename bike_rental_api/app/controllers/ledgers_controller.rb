@@ -18,7 +18,7 @@ class LedgersController < ApplicationController
     @ledger = Ledger.new(ledger_params)
 
     if @ledger.save
-      render json: @ledger, status: :created, location: @ledger
+      render json: @ledger.to_json(include: [:bike, :location]), status: :created, location: @ledger
     else
       render json: @ledger.errors, status: :unprocessable_entity
     end
