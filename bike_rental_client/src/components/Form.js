@@ -35,7 +35,6 @@ class Form extends Component {
         })
         .then(response => response.json())
         .then(data => {
-            console.log(data.id)
             this.setState({
                 // [this.props.bikesInLocation]: [...this.props.bikesInLocation, data],
                 formInputs: {
@@ -52,9 +51,12 @@ class Form extends Component {
             this.setState(updateLedger)
         })
         .catch(err => console.log(err))
-        .then(
+        .then( () => {
             fetch('http://localhost:3000/ledgers', {
-                body: JSON.stringify(this.state.ledgerInfo),
+                body: JSON.stringify({
+                    bike_id: this.state.ledgerInfo.bike_id,
+                    location_id: this.state.ledgerInfo.location_id
+                }),
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json, text/plain, */*',
@@ -63,6 +65,7 @@ class Form extends Component {
             })
             .then(response => response.json())
             .then(data => console.log(data))
+        }
         )
     }
 
