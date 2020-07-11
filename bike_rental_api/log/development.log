@@ -14397,3 +14397,83 @@ Processing by LocationsController#show as */*
 Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 2648)
 
 
+Started GET "/locations" for ::1 at 2020-07-11 08:34:14 -0700
+Processing by LocationsController#index as */*
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 1]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 2]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (6.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 3]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 4]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 7.9ms | Allocations: 8251)
+
+
+Started GET "/locations" for ::1 at 2020-07-11 08:34:14 -0700
+Processing by LocationsController#index as */*
+  [1m[36mLocation Load (11.8ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.7ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 1]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 2]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (7.9ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 3]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (21.8ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 4]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+Completed 200 OK in 60ms (Views: 0.2ms | ActiveRecord: 42.5ms | Allocations: 8251)
+
+
+Started GET "/locations/4" for ::1 at 2020-07-11 08:34:15 -0700
+Processing by LocationsController#show as */*
+  Parameters: {"id"=>"4"}
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/locations_controller.rb:44:in `set_location'
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 4]]
+  ↳ app/controllers/locations_controller.rb:13:in `show'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 2441)
+
+
+Started GET "/bikes/29" for ::1 at 2020-07-11 08:34:18 -0700
+Processing by BikesController#show as */*
+  Parameters: {"id"=>"29"}
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" WHERE "bikes"."id" = $1 LIMIT $2[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/bikes_controller.rb:44:in `set_bike'
+  [1m[36mLocation Load (3.6ms)[0m  [1m[34mSELECT "locations".* FROM "locations" INNER JOIN "ledgers" ON "locations"."id" = "ledgers"."location_id" WHERE "ledgers"."bike_id" = $1[0m  [["bike_id", 29]]
+  ↳ app/controllers/bikes_controller.rb:13:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 3.9ms | Allocations: 2030)
+
+
+Started GET "/locations" for ::1 at 2020-07-11 08:34:31 -0700
+Processing by LocationsController#index as */*
+  [1m[36mLocation Load (1.7ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 1]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.3ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 2]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (1.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 3]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (0.5ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 4]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 0.1ms | ActiveRecord: 4.2ms | Allocations: 8254)
+
+
+Started GET "/locations" for ::1 at 2020-07-11 08:41:32 -0700
+Processing by LocationsController#index as */*
+  [1m[36mLocation Load (2.9ms)[0m  [1m[34mSELECT "locations".* FROM "locations"[0m
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (2.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 1]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (1.4ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 2]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (2.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 3]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+  [1m[36mBike Load (2.2ms)[0m  [1m[34mSELECT "bikes".* FROM "bikes" INNER JOIN "ledgers" ON "bikes"."id" = "ledgers"."bike_id" WHERE "ledgers"."location_id" = $1[0m  [["location_id", 4]]
+  ↳ app/controllers/locations_controller.rb:8:in `index'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 11.4ms | Allocations: 8371)
+
+
