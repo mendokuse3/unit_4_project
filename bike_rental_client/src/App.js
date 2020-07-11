@@ -58,7 +58,7 @@ class App extends Component{
         />
         }
         {this.state.showBike && !this.state.showLocation &&
-        <Bike goHome={this.goHome} currentBike={this.state.currentBike} goBack={this.swapBikeAndLocation}/>
+        <Bike goHome={this.goHome} currentLocation={this.state.currentLocation} currentBike={this.state.currentBike} goBack={this.swapBikeAndLocation}/>
         }
       </div>
     )

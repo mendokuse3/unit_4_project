@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Form from './Form.js'
+import NewForm from './NewForm.js'
 
 class BikesInLocation extends Component {
     state = {
@@ -21,6 +21,7 @@ class BikesInLocation extends Component {
     goToForm = () => {
         this.setState({addBike: !this.state.addBike})
     }
+
 
     render(){
         return (
@@ -44,7 +45,7 @@ class BikesInLocation extends Component {
             </div>
             }
             {this.state.addBike &&
-            <Form currentLocation={this.props.currentLocation} bikesInLocation={this.state.bikesInLocation}/>
+            <NewForm currentLocation={this.props.currentLocation} bikesInLocation={this.state.bikesInLocation}/>
             }
 
             <button onClick={this.props.goHome}>Go Back To Locations</button>

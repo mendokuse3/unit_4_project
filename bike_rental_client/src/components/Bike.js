@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
+import EditForm from './EditForm.js'
 
 class Bike extends Component {
     state = {
-        bike: []
+        bike: [],
+        editBike: false
     }
 
     componentDidMount(){
@@ -16,10 +18,47 @@ class Bike extends Component {
         .catch(err => console.log(err))
     }
 
+    showEditForm = () => {
+        this.setState({editBike: !this.editBike})
+    }
+
+    hideEditForm = () => {
+        this.setState({editBike: false})
+    }
+
+    findLedger = () => {
+        fetch(`http://localhost:3000/ledgers`)
+        .then(response => response.json())
+        .then(ledgers => ledgers.find(ledger => {
+            if(ledger.bike_id === this.props.currentBike && ledger.location_id === this.props.currentLocation){
+                this.deleteLedger(ledger.id)
+            }
+        }))
+    }
+
+    deleteLedger = (id) => {
+        fetch(`http://localhost:3000/ledgers/${id}`, {
+            method: 'DELETE'
+        })
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(err => console.log(err))
+        .then( () => {
+            fetch(`http://localhost:3000/bikes/${this.props.currentBike}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(err => console.log(err))
+            this.props.goHome()
+        })
+    }
+
     render(){
         const showBike = this.state.bike
         return (
             <>
+            {!this.state.editBike &&
             <div className='bike-div'>
                 {this.state.bike && 
                     <div key={showBike.id}>
@@ -33,7 +72,13 @@ class Bike extends Component {
                         <p>Email: {showBike.email}</p>
                     </div>
                 }
+            <button onClick={this.showEditForm} >Edit Bike</button>
+            <button onClick={this.findLedger} >Remove Bike</button>
             </div>
+            }
+            {this.state.editBike &&
+            <EditForm bike={this.state.bike} hideEditForm={this.hideEditForm} currentBike={this.props.currentBike}/>
+            }
             <button onClick={this.props.goBack}>Go Back To Bikes</button>
             <button onClick={this.props.goHome}>Go Back To Locations</button>
             </>

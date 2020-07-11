@@ -36,7 +36,6 @@ class Form extends Component {
         .then(response => response.json())
         .then(data => {
             this.setState({
-                // [this.props.bikesInLocation]: [...this.props.bikesInLocation, data],
                 formInputs: {
                     make: '',
                     model: '',
