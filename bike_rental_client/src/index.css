@@ -32,11 +32,6 @@ header {
   width: 80%;
 }
 
-.bikes-in-location-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 .back-to-bikes {
   margin-top: 3%;
@@ -53,6 +48,7 @@ header {
 }
 
 .locations {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
@@ -62,7 +58,7 @@ header {
   border: 1px solid black;
   width: 80%;
   margin-bottom: 5%;
-  padding: 10%;
+  padding: 5%;
   text-align: center;
 }
 
@@ -72,8 +68,26 @@ button {
   border-radius: 5px
 }
 
+.bikes-in-location-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+.bikes-in-location {
+  width: 90%;
+}
+
+.bikes-in-location-container h1 {
+  align-self: flex-start;
+}
+
+.new-bike-button {
+  width: 85.8px;
+} 
+
 .bikes-in-location-card img {
-  width: 50%;
+  max-width: 50%;
 }
 
 
@@ -95,3 +109,51 @@ form {
   padding: 10px;
   border-radius: 5px;
 }
+
+
+@media (min-width: 500px){
+  .locations {
+    justify-content: space-between;
+  }
+  
+  .location-card {
+    max-width: 300px;
+    width: 38%;
+  }
+
+  .bikes-in-location-card {
+    max-width: 450px;
+    width: 45%;
+    padding: 0;
+    padding-bottom: 5%;
+  }
+
+  .bikes-in-location {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  input[type=text], input[type=number], input[type=email] {
+    width: 300px;
+  }
+
+  .form-input {
+    justify-content: space-around;
+  }
+
+  form input[type=submit] {
+    max-width: 150px;
+  }
+
+}
+
+
+@media (min-width: 1100px){
+  .locations, .bikes-in-location {
+    justify-content: space-around;
+  }
+}
+

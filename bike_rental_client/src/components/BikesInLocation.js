@@ -29,20 +29,21 @@ class BikesInLocation extends Component {
             {!this.state.addBike &&
             <div className='bikes-in-location-container'>
                 <h1>Bikes In {this.state.bikesInLocation.city}</h1>
-                <div className='bikes-in-location'></div>
-                {this.state.bikesInLocation.bikes && 
-                this.state.bikesInLocation.bikes.map(bike => {
-                    return (
-                        <div className='bikes-in-location-card' key={bike.id}>
-                            <h3>{bike.year} {bike.make} {bike.model}</h3>
-                            <img src={bike.img} alt={bike.model} style={{width: '200px'}}/>
-                            <p>Price: ${bike.price}/Day</p>
-                            <button onClick={() => this.props.showBike(bike.id)}>See More</button>
-                        </div>
-                    )
-                })
-                }
-                <button onClick={this.goToForm} >List Your Bike</button>
+                <div className='bikes-in-location'>
+                    {this.state.bikesInLocation.bikes && 
+                    this.state.bikesInLocation.bikes.map(bike => {
+                        return (
+                            <div className='bikes-in-location-card' key={bike.id}>
+                                <h3>{bike.year} {bike.make} {bike.model}</h3>
+                                <img src={bike.img} alt={bike.model} style={{width: '200px'}}/>
+                                <p>Price: ${bike.price}/Day</p>
+                                <button onClick={() => this.props.showBike(bike.id)}>See More</button>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
+                <button className='new-bike-button' onClick={this.goToForm} >List Your Bike</button>
             </div>
             }
             {this.state.addBike &&
