@@ -15,30 +15,25 @@ A working full-stack application using Ruby on Rails and React that allows users
 
 ## Wireframe
 
-<img src="../images/wireframe.png" alt text="wire frame">
+<img src="https://github.com/mendokuse3/unit_4_project/blob/master/images/wireframe.png" alt text="wire frame">
 
 ## User Stories
 
-As a user, I want to be able to search for cocktails by …
-
-- specific name
-- ingredient or multiple ingredients
-- newest cocktails added
-- random cocktails to try
-- alcoholic versus non-alcoholic
-
 As a user, I want to be able to…
 
-- save drinks I want to try / have tried to my profile
-- edit ingredients and measuring and instructions on how to make
-- make notes about the drink itself (“have tried/not tried yet” option? “Favorite/Not Favorite”? )
+- check out a location and see the bikes available at that location
+- check out the bikes and look at a specific bike to see more information about it
+- put up my own bike to be rented by filling out a form
+- edit and remove my bike
 
 ## Challenges
 
-- We discovered the API we chose was somewhat limiting after we got underway. For example, we were able to create separate searches by specific drink name or ingredient, or alcholic or non-alcoholic, but was unable to combine everything into one search. We also found ourselves unable to directly transfer search results from the API into our own database.
+- Due to the nature of the many to many relationship and join tables, I initially thought I would be able to simply nest my post route so that i was '/locations/location_id/bikes', but instead found that it had the same functionality as a just posting to bikes.  In order to work around this, I had to make a second fetch request after to the join table and create a new ledger.
+- In order to delete a bike, I ran into an issue where I was unable to delete the bike due to the existence of the corresponding ledger, so I had to first delete the ledger using a fetch to first find it, then another to delete the ledger, and then a third to delete the bike.
 
 ## What We Would Like To Revisit
 
-- We would like to come back and add user authentication. We didn't feel comfortable tackling that in the time left after we achieved our other goals. 
+- I would love to add user authentication so that each bike is associated to a user, which would prevent users from editing and deleting other users' bikes.
+- I had initially planned on using the google maps api to include a map of the location of each "store", but ran out of time to do so and would love to go back and add that in.
 
 
