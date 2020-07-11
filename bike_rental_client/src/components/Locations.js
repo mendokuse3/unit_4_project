@@ -20,16 +20,18 @@ class Locations extends Component {
         return (
             <div className='location-div'>
                 <h1>We have locations in the following:</h1>
-                {this.state.locations.length > 1 && 
-                this.state.locations.map(location => {
-                    return(
-                        <div key={location.id}>
-                            <h3>{location.city}, {location.state}, {location.country}</h3>
-                            <button onClick={() => this.props.checkOutBikes(location.id)}>Check Out Bikes</button>
-                        </div>
-                    )
-                })
-                }
+                <div className='locations'>
+                    {this.state.locations.length > 1 && 
+                    this.state.locations.map(location => {
+                        return(
+                            <div className='location-card' key={location.id}>
+                                <h3>{location.city}, {location.state}, {location.country}</h3>
+                                <button onClick={() => this.props.checkOutBikes(location.id)}>Check Out Bikes</button>
+                            </div>
+                        )
+                    })
+                    }
+                </div>
             </div>
         )
     }

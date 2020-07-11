@@ -73,21 +73,35 @@ class Form extends Component {
             <div className='form-div'>
                 <h2>Post your bike</h2>
                 <form onSubmit={this.handleSubmit}>
-                    <label htmlFor='make'>Make:</label>
-                    <input type='text' id='make' onChange={this.handleChange} value={this.state.formInputs.make}/>
-                    <label htmlFor='model'>Model:</label>
-                    <input type='text' id='model' onChange={this.handleChange} value={this.state.formInputs.model}/>
-                    <label htmlFor='year'>Year:</label>
-                    <input type='number' id='year' onChange={this.handleChange} value={this.state.formInputs.year}/>
-                    <label htmlFor='bike_class'>Class:</label>
-                    <input type='text' id='bike_class' onChange={this.handleChange} value={this.state.formInputs.bike_class}/>
-                    <label htmlFor='price'>Price:</label>
-                    <input type='number' id='price' onChange={this.handleChange} value={this.state.formInputs.price}/>
-                    <label htmlFor='img'>Image:</label>
-                    <input type='text' id='img' onChange={this.handleChange} value={this.state.formInputs.img}/>
-                    <label htmlFor='email'>Email:</label>
-                    <input type='email' id='email' onChange={this.handleChange} value={this.state.formInputs.email}/>
-                    <input type='submit' />
+                    <div className='form-input'>
+                        <label htmlFor='make'>Make: </label>
+                        <input type='text' id='make' onChange={this.handleChange} value={this.state.formInputs.make}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='model'>Model: </label>
+                        <input type='text' id='model' onChange={this.handleChange} value={this.state.formInputs.model}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='year'>Year: </label>
+                        <input type='number' id='year' onChange={this.handleChange} value={this.state.formInputs.year}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='bike_class'>Class: </label>
+                        <input type='text' id='bike_class' onChange={this.handleChange} value={this.state.formInputs.bike_class}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='price'>Price: </label>
+                        <input type='number' id='price' onChange={this.handleChange} value={this.state.formInputs.price}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='img'>Image: </label>
+                        <input type='text' id='img' onChange={this.handleChange} value={this.state.formInputs.img}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='email'>Email: </label>
+                        <input type='email' id='email' onChange={this.handleChange} value={this.state.formInputs.email}/>
+                    </div>
+                    <input className='submit-form' type='submit' />
                 </form>
             </div>
         )

@@ -27,12 +27,13 @@ class BikesInLocation extends Component {
         return (
             <>
             {!this.state.addBike &&
-            <div >
+            <div className='bikes-in-location-container'>
                 <h1>Bikes In {this.state.bikesInLocation.city}</h1>
+                <div className='bikes-in-location'></div>
                 {this.state.bikesInLocation.bikes && 
                 this.state.bikesInLocation.bikes.map(bike => {
                     return (
-                        <div key={bike.id}>
+                        <div className='bikes-in-location-card' key={bike.id}>
                             <h3>{bike.year} {bike.make} {bike.model}</h3>
                             <img src={bike.img} alt={bike.model} style={{width: '200px'}}/>
                             <p>Price: ${bike.price}/Day</p>
@@ -48,7 +49,7 @@ class BikesInLocation extends Component {
             <NewForm currentLocation={this.props.currentLocation} bikesInLocation={this.state.bikesInLocation}/>
             }
 
-            <button onClick={this.props.goHome}>Go Back To Locations</button>
+            <button className='back-to-locations' onClick={this.props.goHome}>Go Back To Locations</button>
             </>
         )
     }

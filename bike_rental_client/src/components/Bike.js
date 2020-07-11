@@ -32,6 +32,7 @@ class Bike extends Component {
         .then(ledgers => ledgers.find(ledger => {
             if(ledger.bike_id === this.props.currentBike && ledger.location_id === this.props.currentLocation){
                 this.deleteLedger(ledger.id)
+                return 'stop'
             }
         }))
     }
@@ -72,15 +73,17 @@ class Bike extends Component {
                         <p>Email: {showBike.email}</p>
                     </div>
                 }
-            <button onClick={this.showEditForm} >Edit Bike</button>
-            <button onClick={this.findLedger} >Remove Bike</button>
+                <div className='edit-or-delete'>
+                    <button onClick={this.showEditForm} >Edit Bike</button>
+                    <button onClick={this.findLedger} >Remove Bike</button>
+                </div>
             </div>
             }
             {this.state.editBike &&
             <EditForm bike={this.state.bike} hideEditForm={this.hideEditForm} currentBike={this.props.currentBike}/>
             }
-            <button onClick={this.props.goBack}>Go Back To Bikes</button>
-            <button onClick={this.props.goHome}>Go Back To Locations</button>
+            <button className='back-to-bikes' onClick={this.props.goBack}>Go Back To Bikes</button>
+            <button className='back-to-locations' onClick={this.props.goHome}>Go Back To Locations</button>
             </>
         )
     }

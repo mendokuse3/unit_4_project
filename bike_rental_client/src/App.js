@@ -46,7 +46,10 @@ class App extends Component{
   render(){
     return (
       <div className='App'>
-        <header>This is the header</header>
+        <header>
+          <h1>Ruby's Rentals for Riders</h1>
+          <p>For people looking to rent a ride and people looking to rent their rides</p>
+        </header>
         {!this.state.showLocation && !this.state.showBike &&
         <Locations checkOutBikes={this.checkOutBikes} />
         }

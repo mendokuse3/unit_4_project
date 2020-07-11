@@ -41,21 +41,35 @@ class EditForm extends Component {
             <div className='form-div'>
                 <h2>Edit your bike</h2>
                 <form onSubmit={this.updatebike}>
-                    <label htmlFor='make'>Make:</label>
-                    <input type='text' id='make' onChange={this.handleChange} value={this.props.bike.make}/>
-                    <label htmlFor='model'>Model:</label>
-                    <input type='text' id='model' onChange={this.handleChange} value={this.props.bike.model}/>
-                    <label htmlFor='year'>Year:</label>
-                    <input type='number' id='year' onChange={this.handleChange} value={this.props.bike.year}/>
-                    <label htmlFor='bike_class'>Class:</label>
-                    <input type='text' id='bike_class' onChange={this.handleChange} value={this.props.bike.bike_class}/>
-                    <label htmlFor='price'>Price:</label>
-                    <input type='number' id='price' onChange={this.handleChange} value={this.props.bike.price}/>
-                    <label htmlFor='img'>Image:</label>
-                    <input type='text' id='img' onChange={this.handleChange} value={this.props.bike.img}/>
-                    <label htmlFor='email'>Email:</label>
-                    <input type='email' id='email' onChange={this.handleChange} value={this.props.bike.email}/>
-                    <input type='submit' />
+                <div className='form-input'>
+                        <label htmlFor='make'>Make: </label>
+                        <input type='text' id='make' onChange={this.handleChange} value={this.props.bike.make}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='model'>Model: </label>
+                        <input type='text' id='model' onChange={this.handleChange} value={this.props.bike.model}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='year'>Year: </label>
+                        <input type='number' id='year' onChange={this.handleChange} value={this.props.bike.year}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='bike_class'>Class: </label>
+                        <input type='text' id='bike_class' onChange={this.handleChange} value={this.props.bike.bike_class}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='price'>Price: </label>
+                        <input type='number' id='price' onChange={this.handleChange} value={this.props.bike.price}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='img'>Image: </label>
+                        <input type='text' id='img' onChange={this.handleChange} value={this.props.bike.img}/>
+                    </div>
+                    <div className='form-input'>
+                        <label htmlFor='email'>Email: </label>
+                        <input type='email' id='email' onChange={this.handleChange} value={this.props.bike.email}/>
+                    </div>
+                    <input className='submit-form' type='submit' />
                 </form>
             </div>
         )
