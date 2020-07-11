@@ -32,8 +32,8 @@ class Bike extends Component {
         .then(ledgers => ledgers.find(ledger => {
             if(ledger.bike_id === this.props.currentBike && ledger.location_id === this.props.currentLocation){
                 this.deleteLedger(ledger.id)
-                return 'stop'
             }
+            return null
         }))
     }
 
@@ -41,14 +41,14 @@ class Bike extends Component {
         fetch(`http://localhost:3000/ledgers/${id}`, {
             method: 'DELETE'
         })
-        .then(response => response.json())
+        .then(response => response)
         .then(data => console.log(data))
         .catch(err => console.log(err))
         .then( () => {
             fetch(`http://localhost:3000/bikes/${this.props.currentBike}`, {
                 method: 'DELETE'
             })
-            .then(response => response.json())
+            .then(response => response)
             .then(data => console.log(data))
             .catch(err => console.log(err))
             this.props.goHome()
